@@ -94,12 +94,12 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 				sqldb hon = new sqldb(this);
 				hon.open();
 				String returnedName = hon.getNameFromDB(l);
-				String returnedHotness = hon.getUnitFromDB(l);
+				String returnedUnit = hon.getUnitFromDB(l);
 				String returnedPrice = hon.getPriceFromDB(l);
 				hon.close();
 
 				EditsqlName.setText(returnedName);
-				EditsqlUnit.setText(returnedHotness);
+				EditsqlUnit.setText(returnedUnit);
 				EditsqlPrice.setText(returnedPrice);
 			} catch (Exception e) {
 
@@ -116,7 +116,7 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 		case R.id.buttonmodify:
 			try {
 				String mName = EditsqlName.getText().toString();
-				String mHotness = EditsqlUnit.getText().toString();
+				String mUnit = EditsqlUnit.getText().toString();
 				String rPrice = EditsqlPrice.getText().toString();
 				String sRow = EditsqlRow.getText().toString();
 				long lRow = Long.parseLong(sRow);
@@ -161,7 +161,7 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 				}
 				sqldb ex = new sqldb(this);
 				ex.open();
-				ex.updateEntryInDB(lRow, mName, mHotness, rPrice);
+				ex.updateEntryInDB(lRow, mName, mUnit, rPrice);
 				ex.close();
 			} catch (Exception e) {
 				String TheBaderror = e.toString();

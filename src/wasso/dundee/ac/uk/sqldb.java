@@ -16,8 +16,8 @@ public class sqldb {
 	public static final String CO_NAME = "com_name";
 	public static final String SH_UNIT = "share_units";
 	public static final String FRIDAY_PRICE = "weekly_price";
-	private static final String MYDB_NAME = "thesharedb";
-	private static final String MYDB_TABLE = "thesharesTable";
+	private static final String MYDB_NAME = "allsharesdb";
+	private static final String MYDB_TABLE = "allsharestable";
 	private static final int MYDB_VERSION = 1;
 	private DbHelper TheHelper;
 	private final Context TheContext;
@@ -76,9 +76,9 @@ public class sqldb {
 		String[] columns = new String[]{ ROWID, CO_NAME, SH_UNIT, FRIDAY_PRICE};
 		Cursor c = TheDB.query(MYDB_TABLE, columns, null, null, null, null, null);
 		
-		String[][] arrr =  new String[5][4];
+		String[][] arrr =  new String[6][4];
 		c.moveToFirst();
-		for (int i=0; i<5; i++) {
+		for (int i=0; i<6; i++) {
 				  arrr[i] [0]= c.getString(0);
 				  arrr[i] [1]= c.getString(1);
 				  arrr[i] [2]= c.getString(2);
@@ -105,8 +105,8 @@ public class sqldb {
 		Cursor c = TheDB.query(MYDB_TABLE, columns, ROWID + "=" + l, null, null, null, null);
 		if (c != null){
 			c.moveToFirst();
-			String hotness = c.getString(2);
-			return hotness;
+			String theUnit = c.getString(2);
+			return theUnit;
 		}
 		return null;
 	}
@@ -143,7 +143,7 @@ public class sqldb {
 		//long lRow;
 		Test currentprice = new Test();
 		ContentValues cvUpdate = new ContentValues();
-		for (int i=0;i<5;i++)
+		for (int i=0;i<6;i++)
 		{
 			if (i == 1)
 			{

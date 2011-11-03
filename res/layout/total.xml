@@ -83,6 +83,20 @@
             android:padding="3dip" />
     </TableRow>
 
+   <TableRow android:id="@+id/TR6">
+        <TextView
+        	android:id="@+id/row61"
+            android:layout_column="1"
+            android:text="Company6"
+            android:padding="3dip" />
+        <TextView
+        	android:id="@+id/row62"
+            android:text="Worth6"
+            android:gravity="left"
+            android:padding="3dip" />
+    </TableRow>
+
+
     <View
         android:layout_height="2dip"
         android:background="#FF909090" />
@@ -93,9 +107,8 @@
             android:text="Total Portfolio"
             android:padding="3dip" />
     	<TextView
-        	android:id="@+id/row62"
-            android:text="Worth Total"
+        	android:text="Worth Total"
             android:gravity="left"
-            android:padding="3dip" />
+            android:padding="3dip" android:id="@+id/row72"/>
        	</TableRow>
 </TableLayout>

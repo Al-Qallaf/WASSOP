@@ -34,6 +34,7 @@ public final class R {
         public static final int TR3=0x7f050024;
         public static final int TR4=0x7f050025;
         public static final int TR5=0x7f050026;
+        public static final int TR6=0x7f050027;
         public static final int buttonUpdate=0x7f05001a;
         public static final int buttondelete=0x7f050020;
         public static final int buttongetInfo=0x7f05001e;
@@ -59,7 +60,9 @@ public final class R {
         public static final int row52=0x7f050012;
         public static final int row53=0x7f050013;
         public static final int row54=0x7f050014;
-        public static final int row62=0x7f050027;
+        public static final int row61=0x7f050028;
+        public static final int row62=0x7f050029;
+        public static final int row72=0x7f05002a;
         public static final int tableLayout1=0x7f050021;
         public static final int textView1=0x7f050015;
         public static final int textView2=0x7f05001c;

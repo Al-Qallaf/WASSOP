@@ -28,7 +28,7 @@ public class viewtotal extends Activity{
         //info.close();
       
         info.open();
-        String[][] data = new String[5][4];
+        String[][] data = new String[6][4];
         data=info.getDataFromDB();
         info.close();
         //tv.setText(data[0][0] + " " + data[0][1] + " " + data[0][2]);
@@ -124,12 +124,30 @@ public class viewtotal extends Activity{
 			TableRow tr1 = (TableRow) findViewById(R.id.TR5);
 			tr1.setBackgroundColor(Color.parseColor("#FFA500"));
 		}
+        //==============================5=================================
+        //==============================5=================================
+        TextView row6 = (TextView) findViewById(R.id.row61);
+        row6.setText(data[5][1]);
+        TextView row66 = (TextView) findViewById(R.id.row62);
+        Float fnumber6 = calcTotalWorth(data[5][2], data[5][3]);
+        row66.setText(fnumber6.toString());
+        //row55.setText(data[4][3]);
+        if (data[5][3].equals("HighVal") || data[5][3].equals("LowVal") || data[5][3].equals("NoDataVal") ) 
+		{
+			TableRow tr1 = (TableRow) findViewById(R.id.TR6);
+			tr1.setBackgroundColor(Color.RED);
+		}
+		if (data[5][3].equals("0"))
+		{
+			TableRow tr1 = (TableRow) findViewById(R.id.TR6);
+			tr1.setBackgroundColor(Color.parseColor("#FFA500"));
+		}
         //===============================================================
         //===============================================================
 
       //=========================The total======================================
-        Float totalWorthValue = (fnumber1+fnumber2+fnumber3+fnumber4+fnumber5);
-        TextView totalRow = (TextView) findViewById(R.id.row62);
+        Float totalWorthValue = (fnumber1+fnumber2+fnumber3+fnumber4+fnumber5+fnumber6);
+        TextView totalRow = (TextView) findViewById(R.id.row72);
         totalRow.setText(totalWorthValue.toString());
         }
     
