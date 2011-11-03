@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:stretchColumns="1">
+
+    <TableRow>
+        <TextView
+            android:layout_column="1"
+            android:text="Company"
+            android:padding="3dip" />
+        <TextView
+            android:text="Worth"
+            android:gravity="left"
+            android:padding="3dip" />
+    </TableRow>
+	<View
+        android:layout_height="2dip"
+        android:background="#FF909090" />
+    
+    <TableRow android:id="@+id/TR1">	
+        <TextView
+        	android:id="@+id/row11"
+            android:layout_column="1"
+            android:text="Company1"
+            android:padding="3dip" />
+        <TextView
+        	android:id="@+id/row12"
+            android:text="Worth1"
+            android:gravity="left"
+            android:padding="3dip" />
+    </TableRow>
+
+    <TableRow android:id="@+id/TR2">
+        <TextView
+        	android:id="@+id/row21"
+            android:layout_column="1"
+            android:text="Company2"
+            android:padding="3dip" />
+        <TextView
+        	android:id="@+id/row22"
+            android:text="Worth2"
+            android:gravity="left"
+            android:padding="3dip" />
+    </TableRow>
+
+    <TableRow android:id="@+id/TR3">
+        <TextView
+        	android:id="@+id/row31"
+            android:layout_column="1"
+            android:text="Company3"
+            android:padding="3dip" />
+        <TextView
+        	android:id="@+id/row32"
+            android:text="Worth3"
+            android:gravity="left"
+            android:padding="3dip" />
+    </TableRow>
+
+    <TableRow android:id="@+id/TR4">
+        <TextView
+        	android:id="@+id/row41"
+            android:layout_column="1"
+            android:text="Company4"
+            android:padding="3dip" />
+        <TextView
+        	android:id="@+id/row42"
+            android:text="Worth4"
+            android:gravity="left"
+            android:padding="3dip" />
+    </TableRow>
+
+    <TableRow android:id="@+id/TR5">
+        <TextView
+        	android:id="@+id/row51"
+            android:layout_column="1"
+            android:text="Company5"
+            android:padding="3dip" />
+        <TextView
+        	android:id="@+id/row52"
+            android:text="Worth5"
+            android:gravity="left"
+            android:padding="3dip" />
+    </TableRow>
+
+    <View
+        android:layout_height="2dip"
+        android:background="#FF909090" />
+
+    <TableRow>
+        <TextView
+            android:layout_column="1"
+            android:text="Total Portfolio"
+            android:padding="3dip" />
+    	<TextView
+        	android:id="@+id/row62"
+            android:text="Worth Total"
+            android:gravity="left"
+            android:padding="3dip" />
+       	</TableRow>
+</TableLayout>

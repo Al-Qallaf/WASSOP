@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent"
+	android:layout_height="wrap_content" xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<TableLayout android:layout_width="fill_parent" android:id="@+id/tableLayout1"
+		android:layout_height="fill_parent">
+		<TableRow android:paddingLeft="24px">
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:layout_weight="1"
+				android:text="Company"></TextView>
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:layout_weight="1"
+				android:text="Price"></TextView>
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:layout_weight="1"
+				android:text="Units"></TextView>
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:layout_weight="1"
+				android:text="Worth"></TextView>
+		</TableRow>
+	</TableLayout>
+	<TableLayout android:layout_width="fill_parent" android:id="@+id/tableLayout1"
+		android:layout_height="fill_parent">
+		<TableRow android:paddingLeft="24px">
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:layout_weight="1"
+				android:text="Company" android:id="@+id/row11"></TextView>
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:layout_weight="1"
+				android:text="Worth" android:id="@+id/row12"></TextView>
+		</TableRow>
+	</TableLayout>
+		<TableLayout android:layout_width="fill_parent" android:id="@+id/tableLayout1"
+		android:layout_height="fill_parent">
+		<TableRow android:paddingLeft="24px">
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:layout_weight="1"
+				android:text="Company" android:id="@+id/row21"></TextView>
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:layout_weight="1"
+				android:text="Worth" android:id="@+id/row22"></TextView>
+		</TableRow>
+	</TableLayout>
+		<TableLayout android:layout_width="fill_parent" android:id="@+id/tableLayout1"
+		android:layout_height="fill_parent">
+		<TableRow android:paddingLeft="24px">
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:layout_weight="1"
+				android:text="Company" android:id="@+id/row31"></TextView>
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:layout_weight="1"
+				android:text="Worth" android:id="@+id/row32"></TextView>
+		</TableRow>
+	</TableLayout>
+		<TableLayout android:layout_width="fill_parent" android:id="@+id/tableLayout1"
+		android:layout_height="fill_parent">
+		<TableRow android:paddingLeft="24px">
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:layout_weight="1"
+				android:text="Company" android:id="@+id/row41"></TextView>
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:layout_weight="1"
+				android:text="Worth" android:id="@+id/row42"></TextView>
+		</TableRow>
+	</TableLayout>
+		<TableLayout android:layout_width="fill_parent" android:id="@+id/tableLayout1"
+		android:layout_height="fill_parent">
+		<TableRow android:paddingLeft="24px">
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:layout_weight="1"
+				android:text="Company" android:id="@+id/row51"></TextView>
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:layout_weight="1"
+				android:text="Worth" android:id="@+id/row52"></TextView>
+		</TableRow>
+	</TableLayout>
+</LinearLayout>

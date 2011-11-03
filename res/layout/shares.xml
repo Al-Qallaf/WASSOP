@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<TableLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		<TableRow>
+			<TextView android:id="@+id/textView1" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceSmall"
+				android:text="Share"></TextView>
+			<EditText android:layout_width="match_parent"
+				android:layout_height="wrap_content" android:width="100px" android:id="@+id/EditName">
+			</EditText>
+			<TextView android:id="@+id/textView3" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="Units"></TextView>
+			<EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+				android:width="100px" android:id="@+id/EditUnit"></EditText>
+			<TextView android:id="@+id/textView1" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceSmall"
+				android:text="Price"></TextView>
+			<EditText android:layout_width="match_parent"
+				android:layout_height="wrap_content" android:width="100px" android:id="@+id/EditPrice">
+			</EditText>
+		</TableRow>
+	</TableLayout>
+	<TableLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		<TableRow>
+
+			<Button android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="Set" android:id="@+id/buttonUpdate"></Button>
+			<Button android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="Show" android:id="@+id/buttonopenView"></Button>
+		</TableRow>
+	</TableLayout>
+
+	<TextView android:text="Enter Row ID" android:id="@+id/textView2"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+	<EditText android:layout_width="match_parent"
+		android:layout_height="wrap_content" android:inputType="number" android:id="@+id/EditrowInfo">
+		<requestFocus></requestFocus>
+	</EditText>
+	<TableLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		<TableRow>
+			<Button android:text="Get" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/buttongetInfo"></Button>
+			<Button android:text="Edit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/buttonmodify"></Button>
+			<Button android:text="Delete" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/buttondelete"></Button>
+		</TableRow>
+	</TableLayout>
+</LinearLayout>
+
