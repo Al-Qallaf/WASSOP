@@ -143,37 +143,41 @@ public class sqldb {
 		//long lRow;
 		Test currentprice = new Test();
 		ContentValues cvUpdate = new ContentValues();
-		for (int i=0;i<6;i++)
+		for (int i=0;i<7;i++)
 		{
 			if (i == 1)
 			{
-				cvUpdate.put(FRIDAY_PRICE, currentprice.getPrice("BP").toString());
+				cvUpdate.put(FRIDAY_PRICE, checkValidety(currentprice.getPrice("BLVN").toString()));
 				TheDB.update(MYDB_TABLE, cvUpdate, ROWID + "=" + i, null);
 			}
-			
 			if (i == 2)
 			{
-				cvUpdate.put(FRIDAY_PRICE, currentprice.getPrice("EXPN").toString());
+				cvUpdate.put(FRIDAY_PRICE, checkValidety(currentprice.getPrice("BP").toString()));
 				TheDB.update(MYDB_TABLE, cvUpdate, ROWID + "=" + i, null);
 			}
 			
 			if (i == 3)
 			{
-				cvUpdate.put(FRIDAY_PRICE, currentprice.getPrice("HSBA").toString());
-				TheDB.update(MYDB_TABLE, cvUpdate, ROWID + "=" + i, null);
-			}
-			if (i == 4)
-			{
-				cvUpdate.put(FRIDAY_PRICE, currentprice.getPrice("MKS").toString());
+				cvUpdate.put(FRIDAY_PRICE, checkValidety(currentprice.getPrice("EXPN").toString()));
 				TheDB.update(MYDB_TABLE, cvUpdate, ROWID + "=" + i, null);
 			}
 			
-			if (i == 5)
+			if (i == 4)
 			{
-				cvUpdate.put(FRIDAY_PRICE, currentprice.getPrice("SN").toString());
+				cvUpdate.put(FRIDAY_PRICE, checkValidety(currentprice.getPrice("HSBA").toString()));
 				TheDB.update(MYDB_TABLE, cvUpdate, ROWID + "=" + i, null);
 			}
-
+			if (i == 5)
+			{
+				cvUpdate.put(FRIDAY_PRICE, checkValidety(currentprice.getPrice("MKS").toString()));
+				TheDB.update(MYDB_TABLE, cvUpdate, ROWID + "=" + i, null);
+			}
+			
+			if (i == 6)
+			{
+				cvUpdate.put(FRIDAY_PRICE, checkValidety(currentprice.getPrice("SN").toString()));
+				TheDB.update(MYDB_TABLE, cvUpdate, ROWID + "=" + i, null);
+			}
 		}
 		
 		
@@ -199,6 +203,41 @@ public class sqldb {
         //    TheD.show();
 		//}
 		
+	}
+
+	private String checkValidety(String feedValue) 
+	{
+		String corespondant=feedValue; 
+		boolean isitnum=false;
+		if(feedValue.isEmpty())
+		{
+			corespondant=("0000");
+		}
+		else
+		{
+		
+			for (int i1 = 1; i1 < feedValue.length(); i1++) 
+			{
+	        //If we find a non-digit character we return false.
+				if (!Character.isDigit(feedValue.charAt(i1)))
+					isitnum = true;
+			}
+			if (isitnum == false)
+				{
+					if (Double.parseDouble(feedValue) >= 1000000)
+					{
+						
+						corespondant="000";
+					}
+					else
+					if (Double.parseDouble(feedValue) <= (-1))
+					{
+						corespondant="00";
+					}
+
+				}
+		}
+		return corespondant;
 	}
 	
 	

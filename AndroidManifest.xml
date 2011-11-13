@@ -16,6 +16,10 @@
         <activity android:name=".ShareSystemActivity"></activity>
 		<activity android:name=".viewtotal"></activity>
 		<activity android:name=".viewshareinfo"></activity>
+		<uses-library android:name="android.test.runner"/>
     </application>
+    <instrumentation android:name="android.test.InstrumentationTestRunner"
+    android:targetPackage="wasso.dundee.ac.uk"
+    android:label="your tests label" />
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 </manifest>

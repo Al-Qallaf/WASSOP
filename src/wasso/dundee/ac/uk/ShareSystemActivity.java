@@ -124,7 +124,7 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 				
 				if(rPrice.isEmpty())
 				{
-					rPrice=("NoDataVal");
+					rPrice=("0000");
 				}
 				else
 				{
@@ -143,7 +143,7 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 							if (Double.parseDouble(rPrice) >= 1000000)
 							{
 								
-								rPrice="HighVal";
+								rPrice="000";
 								Dialog TheD = new Dialog(this);
 								TheD.setTitle(rPrice);
 								TheD.show();
@@ -151,7 +151,7 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 							else
 							if (Double.parseDouble(rPrice) <= (-1))
 							{
-								rPrice="LowVal";
+								rPrice="00";
 								Dialog TheD = new Dialog(this);
 								TheD.setTitle(rPrice);
 								TheD.show();
