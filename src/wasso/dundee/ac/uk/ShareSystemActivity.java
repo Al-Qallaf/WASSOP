@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class ShareSystemActivity extends Activity implements OnClickListener {
 
 	Button BsqlUpdate, BsqlView, BsqlModify, BsqlGetInfo, BsqlDelete;
-	EditText EditsqlName, EditsqlUnit, EditsqlPrice, EditsqlRow;
+	EditText EditsqlName, EditsqlUnit, EditsqlPrice, EditsqllastPrice, EditsqlRow;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 		EditsqlName = (EditText) findViewById(R.id.EditName);
 		EditsqlUnit = (EditText) findViewById(R.id.EditUnit);
 		EditsqlPrice = (EditText) findViewById(R.id.EditPrice);
+		EditsqllastPrice = (EditText) findViewById(R.id.EditlastPrice);
 		BsqlView = (Button) findViewById(R.id.buttonopenView);
 		BsqlView.setOnClickListener(this);
 		BsqlUpdate.setOnClickListener(this);
@@ -51,6 +52,8 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 				String name = EditsqlName.getText().toString();
 				String unit = EditsqlUnit.getText().toString();
 				String week_price = EditsqlPrice.getText().toString();
+				String last_price = EditsqllastPrice.getText().toString();
+				
 				//if (week_price == "null")
 				//	week_price="NoDataAvai";
 				//if (Double.parseDouble(week_price) >= (1000000)) // if it is char are you sure it can be parsing?  
@@ -59,7 +62,7 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 				//	week_price="Error:LowValue";
 				sqldb entry = new sqldb(ShareSystemActivity.this);
 				entry.open();
-				entry.createEntry(name, unit, week_price);
+				entry.createEntry(name, unit, week_price,last_price);
 				entry.close();
 
 			} catch (Exception e) {
@@ -96,11 +99,13 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 				String returnedName = hon.getNameFromDB(l);
 				String returnedUnit = hon.getUnitFromDB(l);
 				String returnedPrice = hon.getPriceFromDB(l);
+				String returnedLPrice = hon.getLPriceFromDB(l);
 				hon.close();
 
 				EditsqlName.setText(returnedName);
 				EditsqlUnit.setText(returnedUnit);
 				EditsqlPrice.setText(returnedPrice);
+				EditsqllastPrice.setText(returnedLPrice);
 			} catch (Exception e) {
 
 				String WhatIsTheerror = e.toString();
@@ -118,6 +123,7 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 				String mName = EditsqlName.getText().toString();
 				String mUnit = EditsqlUnit.getText().toString();
 				String rPrice = EditsqlPrice.getText().toString();
+				String lPrice = EditsqllastPrice.getText().toString();
 				String sRow = EditsqlRow.getText().toString();
 				long lRow = Long.parseLong(sRow);
 				boolean isitnum=false;
@@ -161,7 +167,7 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 				}
 				sqldb ex = new sqldb(this);
 				ex.open();
-				ex.updateEntryInDB(lRow, mName, mUnit, rPrice);
+				ex.updateEntryInDB(lRow, mName, mUnit, rPrice, lPrice);
 				ex.close();
 			} catch (Exception e) {
 				String TheBaderror = e.toString();

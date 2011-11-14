@@ -16,8 +16,9 @@ public class sqldb {
 	public static final String CO_NAME = "com_name";
 	public static final String SH_UNIT = "share_units";
 	public static final String FRIDAY_PRICE = "weekly_price";
-	private static final String MYDB_NAME = "allsharesdb";
-	private static final String MYDB_TABLE = "allsharestable";
+	public static final String LA_PRICE = "last_price";
+	private static final String MYDB_NAME = "thisallsharesdb";
+	private static final String MYDB_TABLE = "thisallsharestable";
 	private static final int MYDB_VERSION = 1;
 	private DbHelper TheHelper;
 	private final Context TheContext;
@@ -37,7 +38,8 @@ public class sqldb {
 					ROWID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
 					CO_NAME + " TEXT NOT NULL, " +
 					SH_UNIT + " TEXT NOT NULL, " +
-					FRIDAY_PRICE + " TEXT NOT NULL);"
+					FRIDAY_PRICE + " TEXT NOT NULL, " +
+					LA_PRICE + " TEXT NOT NULL);"					
 			);	
 		}
 
@@ -62,12 +64,13 @@ public class sqldb {
 		 TheHelper.close();
 	 }
 
-	public long createEntry(String name, String units, String week_price) {
+	public long createEntry(String name, String units, String week_price, String last_price) {
 		// TODO Auto-generated method stub
 		ContentValues cv = new ContentValues();
 		cv.put(CO_NAME, name);
 		cv.put(SH_UNIT, units);
 		cv.put(FRIDAY_PRICE, week_price);
+		cv.put(LA_PRICE, last_price);
 		return TheDB.insert(MYDB_TABLE, null, cv);
 	}
 
@@ -123,12 +126,25 @@ public class sqldb {
 		return null;
 	}
 	
-	public void updateEntryInDB(long lRow, String coName, String sUnit, String fPrice) throws SQLException{
+	public String getLPriceFromDB(long l) throws SQLException{
+		// TODO Auto-generated method stub
+		String[] columns = new String[]{ ROWID, CO_NAME, SH_UNIT, FRIDAY_PRICE, LA_PRICE};
+		Cursor c = TheDB.query(MYDB_TABLE, columns, ROWID + "=" + l, null, null, null, null);
+		if (c != null){
+			c.moveToFirst();
+			String Lprice = c.getString(3);
+			return Lprice;
+		}
+		return null;
+	}
+	
+	public void updateEntryInDB(long lRow, String coName, String sUnit, String fPrice, String lPrice) throws SQLException{
 		// TODO Auto-generated method stub
 		ContentValues cvUpdate = new ContentValues();
 		cvUpdate.put(CO_NAME, coName);
 		cvUpdate.put(SH_UNIT, sUnit);
 		cvUpdate.put(FRIDAY_PRICE, fPrice);
+		cvUpdate.put(LA_PRICE, lPrice);
 		TheDB.update(MYDB_TABLE, cvUpdate, ROWID + "=" + lRow, null);	
 	}
 
