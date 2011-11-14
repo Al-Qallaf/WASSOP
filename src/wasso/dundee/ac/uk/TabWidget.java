@@ -22,12 +22,18 @@ public class TabWidget extends TabActivity {
        
         intent = new Intent().setClass(this, ShareSystemActivity.class);
         spec = tabHost.newTabSpec("Shares").setIndicator("Shares",
+                          res.getDrawable(R.drawable.ic_tab_chan))
+                      .setContent(intent);
+        tabHost.addTab(spec);
+        
+        intent = new Intent().setClass(this, viewsalerts.class);
+        spec = tabHost.newTabSpec("Alerts").setIndicator("Alerts",
                           res.getDrawable(R.drawable.ic_tab_share))
                       .setContent(intent);
         tabHost.addTab(spec);
         
         //intent = new Intent().setClass(this, viewtotal.class);
-        spec = tabHost.newTabSpec("Portfolio").setIndicator("Share Worth & Total Portfolio",
+        spec = tabHost.newTabSpec("Portfolio").setIndicator("Worth&Total",
                           res.getDrawable(R.drawable.ic_tab_port))
                       .setContent(new Intent(this, viewtotal.class)
                       .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));

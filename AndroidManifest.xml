@@ -15,7 +15,7 @@
         </activity>
         <activity android:name=".ShareSystemActivity"></activity>
 		<activity android:name=".viewtotal"></activity>
-		<activity android:name=".viewshareinfo"></activity>
+		<activity android:name=".viewsalerts"></activity>
 		<uses-library android:name="android.test.runner"/>
     </application>
     <instrumentation android:name="android.test.InstrumentationTestRunner"
