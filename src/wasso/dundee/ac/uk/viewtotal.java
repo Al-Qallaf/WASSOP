@@ -79,15 +79,15 @@ public class viewtotal extends Activity{
 			tr1.setBackgroundColor(Color.RED);
 			if (data[1][3].equals("00"))
 			{
-				row11.setText("LowValue");
+				row22.setText("LowValue");
 			}
 			if (data[1][3].equals("000"))
 			{
-				row11.setText("HighValue");
+				row22.setText("HighValue");
 			}
 			if (data[1][3].equals("0000"))
 			{
-				row11.setText("NoValue");
+				row22.setText("NoValue");
 			}
 
 		}
@@ -112,15 +112,15 @@ public class viewtotal extends Activity{
 			tr1.setBackgroundColor(Color.RED);
 			if (data[2][3].equals("00"))
 			{
-				row11.setText("LowValue");
+				row33.setText("LowValue");
 			}
 			if (data[2][3].equals("000"))
 			{
-				row11.setText("HighValue");
+				row33.setText("HighValue");
 			}
 			if (data[2][3].equals("0000"))
 			{
-				row11.setText("NoValue");
+				row33.setText("NoValue");
 			}
 
 		}
@@ -144,15 +144,15 @@ public class viewtotal extends Activity{
 			tr1.setBackgroundColor(Color.RED);
 			if (data[3][3].equals("00"))
 			{
-				row11.setText("LowValue");
+				row33.setText("LowValue");
 			}
 			if (data[3][3].equals("000"))
 			{
-				row11.setText("HighValue");
+				row33.setText("HighValue");
 			}
 			if (data[3][3].equals("0000"))
 			{
-				row11.setText("NoValue");
+				row33.setText("NoValue");
 			}
 
 		}
@@ -176,15 +176,15 @@ public class viewtotal extends Activity{
 			tr1.setBackgroundColor(Color.RED);
 			if (data[4][3].equals("00"))
 			{
-				row11.setText("LowValue");
+				row55.setText("LowValue");
 			}
 			if (data[4][3].equals("000"))
 			{
-				row11.setText("HighValue");
+				row55.setText("HighValue");
 			}
 			if (data[4][3].equals("0000"))
 			{
-				row11.setText("NoValue");
+				row55.setText("NoValue");
 			}
 
 		}
@@ -208,15 +208,15 @@ public class viewtotal extends Activity{
 			tr1.setBackgroundColor(Color.RED);
 			if (data[5][3].equals("00"))
 			{
-				row11.setText("LowValue");
+				row66.setText("LowValue");
 			}
 			if (data[5][3].equals("000"))
 			{
-				row11.setText("HighValue");
+				row66.setText("HighValue");
 			}
 			if (data[5][3].equals("0000"))
 			{
-				row11.setText("NoValue");
+				row66.setText("NoValue");
 			}
 
 		}

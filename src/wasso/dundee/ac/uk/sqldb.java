@@ -132,7 +132,7 @@ public class sqldb {
 		Cursor c = TheDB.query(MYDB_TABLE, columns, ROWID + "=" + l, null, null, null, null);
 		if (c != null){
 			c.moveToFirst();
-			String Lprice = c.getString(3);
+			String Lprice = c.getString(4);
 			return Lprice;
 		}
 		return null;
@@ -221,40 +221,42 @@ public class sqldb {
 		
 	}
 
-	private String checkValidety(String feedValue) 
+	public String checkValidety(String feedValue) 
 	{
-		String corespondant=feedValue; 
-		boolean isitnum=false;
+		//String corespondant=feedValue; 
+		boolean isittext=false;
 		if(feedValue.isEmpty())
 		{
-			corespondant=("0000");
+			feedValue=("0000");
 		}
 		else
 		{
 		
-			for (int i1 = 1; i1 < feedValue.length(); i1++) 
+			for (int i1 = 1; i1 < feedValue.length() && isittext==false ; i1++) 
 			{
-	        //If we find a non-digit character we return false.
 				if (!Character.isDigit(feedValue.charAt(i1)))
-					isitnum = true;
+					isittext = true;
 			}
-			if (isitnum == false)
+			if (isittext == false)
 				{
 					if (Double.parseDouble(feedValue) >= 1000000)
 					{
 						
-						corespondant="000";
+						feedValue="000";
 					}
 					else
 					if (Double.parseDouble(feedValue) <= (-1))
 					{
-						corespondant="00";
+						feedValue="00";
 					}
 
 				}
+			else
+				{
+					feedValue="0000";
+				}
+			
 		}
-		return corespondant;
+		return feedValue;
 	}
-	
-	
 }

@@ -42,8 +42,6 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 	}
 
 	public void onClick(View arg0) {
-		// TODO Auto-generated method stub
-
 		switch (arg0.getId()) {
 		case R.id.buttonUpdate:
 
@@ -53,14 +51,8 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 				String unit = EditsqlUnit.getText().toString();
 				String week_price = EditsqlPrice.getText().toString();
 				String last_price = EditsqllastPrice.getText().toString();
-				
-				//if (week_price == "null")
-				//	week_price="NoDataAvai";
-				//if (Double.parseDouble(week_price) >= (1000000)) // if it is char are you sure it can be parsing?  
-				//	week_price="Error:highValue";
-				//if (Double.parseDouble(week_price) <= (-1))   
-				//	week_price="Error:LowValue";
 				sqldb entry = new sqldb(ShareSystemActivity.this);
+				week_price= entry.checkValidety(week_price);
 				entry.open();
 				entry.createEntry(name, unit, week_price,last_price);
 				entry.close();
@@ -126,46 +118,8 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 				String lPrice = EditsqllastPrice.getText().toString();
 				String sRow = EditsqlRow.getText().toString();
 				long lRow = Long.parseLong(sRow);
-				boolean isitnum=false;
-				
-				if(rPrice.isEmpty())
-				{
-					rPrice=("0000");
-				}
-				else
-				{
-				
-					for (int i1 = 1; i1 < rPrice.length(); i1++) 
-					{
-			        //If we find a non-digit character we return false.
-						if (!Character.isDigit(rPrice.charAt(i1)))
-							isitnum = true;
-					}
-					if (isitnum == false)
-						{
-							Dialog TheDd = new Dialog(this);
-							TheDd.setTitle("Dash");
-							TheDd.show();
-							if (Double.parseDouble(rPrice) >= 1000000)
-							{
-								
-								rPrice="000";
-								Dialog TheD = new Dialog(this);
-								TheD.setTitle(rPrice);
-								TheD.show();
-							}
-							else
-							if (Double.parseDouble(rPrice) <= (-1))
-							{
-								rPrice="00";
-								Dialog TheD = new Dialog(this);
-								TheD.setTitle(rPrice);
-								TheD.show();
-							}
-
-						}
-				}
 				sqldb ex = new sqldb(this);
+				rPrice=ex.checkValidety(rPrice);
 				ex.open();
 				ex.updateEntryInDB(lRow, mName, mUnit, rPrice, lPrice);
 				ex.close();
@@ -188,10 +142,9 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 				ex1.deleteEntryInDB(lRow1);
 				ex1.close();
 			} catch (Exception e) {
-				
 				String TheBaderror = e.toString();
 				Dialog TheD = new Dialog(this);
-				TheD.setTitle("Errrrrr");
+				TheD.setTitle("Error When Deleting");
 				TextView tv = new TextView(this);
 				tv.setText(TheBaderror);
 				TheD.setContentView(tv);
