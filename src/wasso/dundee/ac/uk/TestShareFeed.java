@@ -1,25 +1,20 @@
 package wasso.dundee.ac.uk;
 
-import static org.junit.Assert.*;
+import junit.framework.TestCase;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+public class TestShareFeed extends TestCase {
 
-public class TestShareFeed {
-
-	@Before
-	public void setUp() throws Exception {
+	protected void setUp() throws Exception {
+		super.setUp();
 	}
 
-	@After
-	public void tearDown() throws Exception {
+	protected void tearDown() throws Exception {
+		super.tearDown();
 	}
 
-	@Test
 	public void testGetPrice() {
-	ShareFeed feed = new ShareFeed();
-	assertTrue(feed.getPrice("BP") >= 0 && feed.getPrice("BP") < 10000) ;
+		ShareFeed feed = new ShareFeed();
+		assertTrue(feed.getPrice("BP") >= 0 && feed.getPrice("BP") < 10000) ;
 	}
 
 }
