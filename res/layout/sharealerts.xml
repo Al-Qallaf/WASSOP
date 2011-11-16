@@ -2,21 +2,21 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="14.5sp">
 	<TableRow android:id="@+id/trow1">
-		<TextView android:id="@+id/row11" android:text="Com1" android:padding="3dip" />
+		<TextView android:id="@+id/row11" android:padding="3dip" />
 	</TableRow>
 	<TableRow android:id="@+id/trow2">
-		<TextView android:id="@+id/row21" android:text="Com2" android:padding="3dip" />
+		<TextView android:id="@+id/row21" android:padding="3dip" />
 	</TableRow>
 	<TableRow android:id="@+id/trow3">
-		<TextView android:id="@+id/row31" android:text="Com3" android:padding="3dip" />
+		<TextView android:id="@+id/row31" android:padding="3dip" />
 	</TableRow>
 	<TableRow android:id="@+id/trow4">
-		<TextView android:id="@+id/row41" android:text="Com4" android:padding="3dip" />
+		<TextView android:id="@+id/row41" android:padding="3dip" />
 	</TableRow>
 	<TableRow android:id="@+id/trow5">
-		<TextView android:id="@+id/row51" android:text="Com5" android:padding="3dip" />
+		<TextView android:id="@+id/row51" android:padding="3dip" />
 	</TableRow>
 	<TableRow android:id="@+id/trow6">
-		<TextView android:id="@+id/row61" android:text="Com6" android:padding="3dip" />
+		<TextView android:id="@+id/row61" android:padding="3dip" />
 	</TableRow>
 </TableLayout>

@@ -76,16 +76,17 @@ public class sqldb {
 
 	public String[][] getDataFromDB() throws SQLException{
 		// TODO Auto-generated method stub
-		String[] columns = new String[]{ ROWID, CO_NAME, SH_UNIT, FRIDAY_PRICE};
+		String[] columns = new String[]{ ROWID, CO_NAME, SH_UNIT, FRIDAY_PRICE, LA_PRICE};
 		Cursor c = TheDB.query(MYDB_TABLE, columns, null, null, null, null, null);
 		
-		String[][] arrr =  new String[6][4];
+		String[][] arrr =  new String[6][5];
 		c.moveToFirst();
 		for (int i=0; i<6; i++) {
 				  arrr[i] [0]= c.getString(0);
 				  arrr[i] [1]= c.getString(1);
 				  arrr[i] [2]= c.getString(2);
 				  arrr[i] [3]= c.getString(3);
+				  arrr[i] [4]= c.getString(4);
 				  c.moveToNext();
 		}	
 		return arrr;
