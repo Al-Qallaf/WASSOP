@@ -18,7 +18,7 @@ public class TestShareFeed {
 
 	@Test
 	public void testGetPrice() {
-	Test feed = new Test();
+	ShareFeed feed = new ShareFeed();
 	assertTrue(feed.getPrice("BP") >= 0 && feed.getPrice("BP") < 10000) ;
 	}
 

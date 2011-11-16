@@ -4,7 +4,7 @@ import java.net.*;
 import java.io.*;
 import java.util.*;
 
-public class Test {
+public class ShareFeed {
 
 	
 public Float getPrice(String symbol){

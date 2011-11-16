@@ -157,7 +157,7 @@ public class sqldb {
 	{
 	
 		//long lRow;
-		Test currentprice = new Test();
+		ShareFeed currentprice = new ShareFeed();
 		ContentValues cvUpdate = new ContentValues();
 		for (int i=0;i<7;i++)
 		{
