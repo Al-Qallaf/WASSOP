@@ -7,23 +7,6 @@ import java.util.*;
 public class Test {
 
 	
-	public static void main(String[] args) {
-		
-		Test test1 = new Test();
-		//get company symbol (for testing)
-		Scanner read = new Scanner(System.in);
-		System.out.println("Please enter company symbol");
-		String symbol = read.nextLine();
-		read.close();
-		
-		Float price = test1.getPrice(symbol);
-		
-		 //printing to console to test, would validate and write to database here
-    	System.out.print(price);
-		
-	}
-	
-	
 public Float getPrice(String symbol){
 	
 	//CODE TO GET SHARE PRICES
