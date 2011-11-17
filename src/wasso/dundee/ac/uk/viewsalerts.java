@@ -45,6 +45,13 @@ public class viewsalerts extends Activity{
 		{
 			String notice = null;
 			
+			if (data[i][3].equals("0000") || data[i][4].equals("0000"))
+			{
+				notice = "No Data";
+			}
+			else
+			{
+			
 			float percentage = ((Float.parseFloat(data[i][3]) - Float.parseFloat(data[i][4]))/Float.parseFloat(data[i][4]))*100;
 			if(percentage >= 10)
 				{
@@ -55,39 +62,39 @@ public class viewsalerts extends Activity{
 					{
 						notice = "Plummet";
 					}
+			}
 			
-			
-			if (((notice=="Rocket")||(notice=="Plummet")) && (count == 0))
+			if (((notice=="Rocket")||(notice=="Plummet")||(notice == "No Data"))&&(count == 0))
 				{
 					row1.setText(data[i][1]+" :   "+ notice);
 					count++;
 					continue;
 				}
-			if (((notice=="Rocket")||(notice=="Plummet"))&&(count==1))
+			if (((notice=="Rocket")||(notice=="Plummet")||(notice == "No Data"))&&(count==1))
 				{
 					row2.setText(data[i][1]+" :   "+ notice);
 					count++;
 					continue;
 				}
-			if (((notice=="Rocket")||(notice=="Plummet"))&&(count==2))
+			if (((notice=="Rocket")||(notice=="Plummet")||(notice == "No Data"))&&(count==2))
 				{
 					row3.setText(data[i][1]+" :   "+ notice);
 					count++;
 					continue;
 				}
-			if (((notice=="Rocket")||(notice=="Plummet"))&&(count==3))
+			if (((notice=="Rocket")||(notice=="Plummet")||(notice == "No Data"))&&(count==3))
 				{
 					row4.setText(data[i][1]+" :   "+ notice);
 					count++;
 					continue;
 				}
-			if (((notice=="Rocket")||(notice=="Plummet"))&&(count==4))
+			if (((notice=="Rocket")||(notice=="Plummet")||(notice == "No Data"))&&(count==4))
 				{
 					row5.setText(data[i][1]+" :   "+ notice);
 					count++;
 					continue;
 				}
-			if (((notice=="Rocket")||(notice=="Plummet"))&&(count==5))
+			if (((notice=="Rocket")||(notice=="Plummet")||(notice == "No Data"))&&(count==5))
 				{
 					row6.setText(data[i][1]+" :   "+ notice);
 					count++;
@@ -99,8 +106,10 @@ public class viewsalerts extends Activity{
 		{
 			if (rows[i].getText().toString().contains("Rocket"))
 				Tablerows[i].setBackgroundColor(Color.GREEN);
-			else
+			if (rows[i].getText().toString().contains("Plummet"))
 				Tablerows[i].setBackgroundColor(Color.RED);
+			if (rows[i].getText().toString().contains("No Data"))
+				Tablerows[i].setBackgroundColor(Color.parseColor("#FFBF00"));
 		}
 		
 		}

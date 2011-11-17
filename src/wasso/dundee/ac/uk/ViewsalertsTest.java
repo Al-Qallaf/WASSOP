@@ -10,7 +10,8 @@ public class ViewsalertsTest extends TestCase {
 	
 	public void testcalcPercetage()
 	{
-		viewsalerts myAlerts = new viewsalerts();
+		//Tested seperately then moved inside another method 
+		//viewsalerts myAlerts = new viewsalerts();
 		//assertEquals("Rocket", myAlerts.calcPercentage(10, 100));
 		//assertEquals("Plummet", myAlerts.calcPercentage(100, 10));
 	}

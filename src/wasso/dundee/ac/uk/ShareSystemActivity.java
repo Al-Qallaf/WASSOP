@@ -53,6 +53,7 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 				String last_price = EditsqllastPrice.getText().toString();
 				sqldb entry = new sqldb(ShareSystemActivity.this);
 				week_price= entry.checkValidety(week_price);
+				last_price= entry.checkValidety(last_price);
 				entry.open();
 				entry.createEntry(name, unit, week_price,last_price);
 				entry.close();
@@ -120,6 +121,7 @@ public class ShareSystemActivity extends Activity implements OnClickListener {
 				long lRow = Long.parseLong(sRow);
 				sqldb ex = new sqldb(this);
 				rPrice=ex.checkValidety(rPrice);
+				lPrice= ex.checkValidety(lPrice);
 				ex.open();
 				ex.updateEntryInDB(lRow, mName, mUnit, rPrice, lPrice);
 				ex.close();

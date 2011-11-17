@@ -144,15 +144,15 @@ public class viewtotal extends Activity{
 			tr1.setBackgroundColor(Color.RED);
 			if (data[3][3].equals("00"))
 			{
-				row33.setText("LowValue");
+				row44.setText("LowValue");
 			}
 			if (data[3][3].equals("000"))
 			{
-				row33.setText("HighValue");
+				row44.setText("HighValue");
 			}
 			if (data[3][3].equals("0000"))
 			{
-				row33.setText("NoValue");
+				row44.setText("NoValue");
 			}
 
 		}
