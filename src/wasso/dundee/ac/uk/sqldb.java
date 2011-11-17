@@ -28,12 +28,10 @@ public class sqldb {
 
 		public DbHelper(Context context) {
 			super(context, MYDB_NAME, null, MYDB_VERSION);
-			// TODO Auto-generated constructor stub
 		}
 
 		@Override
 		public void onCreate(SQLiteDatabase db) {
-			// TODO Auto-generated method stub
 			db.execSQL("CREATE TABLE " + MYDB_TABLE + " (" +
 					ROWID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
 					CO_NAME + " TEXT NOT NULL, " +
@@ -45,7 +43,6 @@ public class sqldb {
 
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-			// TODO Auto-generated method stub
 			db.execSQL("DROP TABLE IF EXISTS " + MYDB_TABLE);
 			onCreate(db);
 		}		
@@ -65,7 +62,6 @@ public class sqldb {
 	 }
 
 	public long createEntry(String name, String units, String week_price, String last_price) {
-		// TODO Auto-generated method stub
 		ContentValues cv = new ContentValues();
 		cv.put(CO_NAME, name);
 		cv.put(SH_UNIT, units);
@@ -75,7 +71,6 @@ public class sqldb {
 	}
 
 	public String[][] getDataFromDB() throws SQLException{
-		// TODO Auto-generated method stub
 		String[] columns = new String[]{ ROWID, CO_NAME, SH_UNIT, FRIDAY_PRICE, LA_PRICE};
 		Cursor c = TheDB.query(MYDB_TABLE, columns, null, null, null, null, null);
 		
@@ -92,7 +87,6 @@ public class sqldb {
 		return arrr;
 	}
 	public String getNameFromDB(long l) throws SQLException{
-		// TODO Auto-generated method stub
 		String[] columns = new String[]{ ROWID, CO_NAME, SH_UNIT};
 		Cursor c = TheDB.query(MYDB_TABLE, columns, ROWID + "=" + l, null, null, null, null);
 		if (c != null){
@@ -104,7 +98,6 @@ public class sqldb {
 	}
 
 	public String getUnitFromDB(long l) throws SQLException{
-		// TODO Auto-generated method stub
 		String[] columns = new String[]{ ROWID, CO_NAME, SH_UNIT};
 		Cursor c = TheDB.query(MYDB_TABLE, columns, ROWID + "=" + l, null, null, null, null);
 		if (c != null){
@@ -116,7 +109,6 @@ public class sqldb {
 	}
 
 	public String getPriceFromDB(long l) throws SQLException{
-		// TODO Auto-generated method stub
 		String[] columns = new String[]{ ROWID, CO_NAME, SH_UNIT, FRIDAY_PRICE};
 		Cursor c = TheDB.query(MYDB_TABLE, columns, ROWID + "=" + l, null, null, null, null);
 		if (c != null){
@@ -128,7 +120,6 @@ public class sqldb {
 	}
 	
 	public String getLPriceFromDB(long l) throws SQLException{
-		// TODO Auto-generated method stub
 		String[] columns = new String[]{ ROWID, CO_NAME, SH_UNIT, FRIDAY_PRICE, LA_PRICE};
 		Cursor c = TheDB.query(MYDB_TABLE, columns, ROWID + "=" + l, null, null, null, null);
 		if (c != null){
@@ -140,7 +131,6 @@ public class sqldb {
 	}
 	
 	public void updateEntryInDB(long lRow, String coName, String sUnit, String fPrice, String lPrice) throws SQLException{
-		// TODO Auto-generated method stub
 		ContentValues cvUpdate = new ContentValues();
 		cvUpdate.put(CO_NAME, coName);
 		cvUpdate.put(SH_UNIT, sUnit);
@@ -150,14 +140,12 @@ public class sqldb {
 	}
 
 	public void deleteEntryInDB(long lRow1) throws SQLException{
-		// TODO Auto-generated method stub
 		TheDB.delete(MYDB_TABLE, ROWID + "=" + lRow1, null);
 	}
 	
 	public void updatewithfeed()throws SQLException
 	{
 	
-		//long lRow;
 		ShareFeed currentprice = new ShareFeed();
 		ContentValues cvUpdate = new ContentValues();
 		for (int i=0;i<7;i++)
@@ -198,33 +186,10 @@ public class sqldb {
 		}
 		
 		
-		//try
-		//{
-		//String[] myabbriviation = {"BP","HSBA","EXPN","MKS","SN"}; 
-		//long lRow;
-		//Test currentprice = new Test();
-		//ContentValues cvUpdate = new ContentValues();
-		//for (int i=0;i<5;i++)
-		//{
-		//	cvUpdate.put(FRIDAY_PRICE, currentprice.getPrice(myabbriviation[i]));
-		//	TheDB.update(MYDB_TABLE, cvUpdate, ROWID + "=" + i, null);	
-		//}
-		//}
-		//catch (Exception e)
-		//{
-		//    Dialog TheD = new Dialog(TheContext);
-         //   TextView tv = new TextView(TheContext);
-        //    tv.setText(e.getMessage());
-            //tv.setText("Here");
-        //    TheD.setContentView(tv);
-        //    TheD.show();
-		//}
-		
 	}
 
 	public String checkValidety(String feedValue) 
-	{
-		//String corespondant=feedValue; 
+	{ 
 		boolean isittext=false;
 		if(feedValue.isEmpty())
 		{
