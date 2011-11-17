@@ -39,52 +39,104 @@ public class viewsalerts extends Activity{
 			
 			float percentage = ((Float.parseFloat(data[i][3]) - Float.parseFloat(data[i][4]))/Float.parseFloat(data[i][4]))*100;
 			if(percentage >= 10)
-				{
-					notice = "Rocket";
-				}
-			else 
-				if (percentage <= -20)
-					{
-						notice = "Plummet";
-					}
+			{
+				notice = "Rocket";
+			}
+			else if (percentage <= -20)
+			{
+				notice = "Plummet";
+			}
 			
 			
 			if (((notice=="Rocket")||(notice=="Plummet")) && (count == 0))
+			{
+				TableRow tr1 = (TableRow) findViewById(R.id.trow1);
+				if(notice == "Rocket")
 				{
-					row1.setText(notice);
-					count++;
-					continue;
+					tr1.setBackgroundColor(Color.GREEN);
 				}
+				else
+				{
+					tr1.setBackgroundColor(Color.RED);
+				}
+				row1.setText(notice);
+				count++;
+				continue;
+			}
 			if (((notice=="Rocket")||(notice=="Plummet"))&&(count==1))
+			{
+				TableRow tr2 = (TableRow) findViewById(R.id.trow2);
+				if(notice == "Rocket")
 				{
-					row2.setText(notice);
-					count++;
-					continue;
+					tr2.setBackgroundColor(Color.GREEN);
 				}
+				else
+				{
+					tr2.setBackgroundColor(Color.RED);
+				}				row2.setText(notice);
+				count++;
+				continue;
+			}
 			if (((notice=="Rocket")||(notice=="Plummet"))&&(count==2))
+			{
+				TableRow tr3 = (TableRow) findViewById(R.id.trow3);
+				if(notice == "Rocket")
 				{
-					row3.setText(notice);
-					count++;
-					continue;
+					tr3.setBackgroundColor(Color.GREEN);
 				}
+				else
+				{
+					tr3.setBackgroundColor(Color.RED);
+				}
+				row3.setText(notice);
+				count++;
+				continue;
+			}
 			if (((notice=="Rocket")||(notice=="Plummet"))&&(count==3))
+			{
+				TableRow tr4 = (TableRow) findViewById(R.id.trow4);
+				if(notice == "Rocket")
 				{
-					row4.setText(notice);
-					count++;
-					continue;
+					tr4.setBackgroundColor(Color.GREEN);
 				}
+				else
+				{
+					tr4.setBackgroundColor(Color.RED);
+				}
+				row4.setText(notice);
+				count++;
+				continue;
+			}
 			if (((notice=="Rocket")||(notice=="Plummet"))&&(count==4))
+			{
+				TableRow tr5 = (TableRow) findViewById(R.id.trow5);
+				if(notice == "Rocket")
 				{
-					row5.setText(notice);
-					count++;
-					continue;
+					tr5.setBackgroundColor(Color.GREEN);
 				}
+				else
+				{
+					tr5.setBackgroundColor(Color.RED);
+				}
+				row5.setText(notice);
+				count++;
+				continue;
+			}
 			if (((notice=="Rocket")||(notice=="Plummet"))&&(count==5))
+			{
+				TableRow tr6 = (TableRow) findViewById(R.id.trow6);
+				if(notice=="Rocket")
 				{
-					row6.setText(notice);
-					count++;
-					continue;
+					tr6.setBackgroundColor(Color.GREEN);
 				}
+				else
+				{
+					tr6.setBackgroundColor(Color.RED);
+				}
+				row6.setText(notice);
+				count++;
+				continue;
+			}
 		}
 		
 		int fnumber=500;
